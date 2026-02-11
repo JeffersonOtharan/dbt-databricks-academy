@@ -1,3 +1,5 @@
+-- models/dim_produto.sql
+
 with base as (
     select
         productid,
@@ -13,7 +15,7 @@ with base as (
         weight,
         weightunitmeasurecode
     from
-        {{ source('production', 'product') }}
+        {{ source('adventure_works','production_product') }}
 )
 select
     productid,
