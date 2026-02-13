@@ -4,30 +4,31 @@ sources:
     description: "Fonte de dados do banco fea_academy"
     tables:
       - name: production_product
-        description: "Tabela de produtos com informações detalhadas sobre os produtos"        
-      - name: productsubcategory
-        description: "Tabela de subcategorias de produtos"
+        description: "Tabela de produtos com informações detalhadas sobre os produtos"
         
-      - name: productcategory
-        description: "Tabela de categorias de produtos"
+      - name: production_productcategory
+        description: "Categorias de produtos"
         
-      - name: salesorderheader
-        description: "Cabeçalho dos pedidos"
+      - name: production_productsubcategory
+        description: "Subcategorias de produtos"
         
-      - name: salesorderdetail
-        description: "Detalhes dos pedidos"
-        
-      - name: customer
+      - name: sales_customer
         description: "Informações sobre os clientes"
         
-      - name: salesterritory
+      - name: sales_salesorderheader
+        description: "Cabeçalho dos pedidos"
+        
+      - name: sales_salesorderdetail
+        description: "Detalhes dos pedidos"
+        
+      - name: sales_salesterritory
         description: "Territórios de vendas"
         
-      - name: person
-        description: "Tabela com dados pessoais"
+      - name: person_person
+        description: "Informações pessoais dos clientes"
         
-      - name: personaddress
-        description: "Tabela de endereços pessoais"
+      - name: person_address
+        description: "Endereços das pessoas"
         
-      - name: personemailaddress
-        description: "Tabela de endereços de email"
+      - name: person_emailaddress
+        description: "Endereços de email das pessoas"

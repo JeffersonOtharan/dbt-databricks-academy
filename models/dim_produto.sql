@@ -1,5 +1,3 @@
--- models/dim_produto.sql
-
 with base as (
     select
         productid,
