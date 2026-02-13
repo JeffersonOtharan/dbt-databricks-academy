@@ -13,7 +13,7 @@ with base as (
         weight,
         weightunitmeasurecode
     from
-        {{ source('production', 'product') }}
+        {{ source('adventure_works','production_product') }}
 )
 select
     productid,
