@@ -32,3 +32,13 @@ sources:
         
       - name: person_emailaddress
         description: "Endereços de email das pessoas"
+      - name: production_product
+      - name: production_productsubcategory
+      - name: production_productcategory
+      - name: sales_customer
+      - name: sales_salesterritory
+      - name: sales_salesorderdetail
+      - name: sales_salesorderheader
+      - name: sales_creditcard
+      - name: sales_salesorderheadersalesreason
+      - name: sales_salesreason
