@@ -1,21 +1,29 @@
 with base as (
     select
-        orderid,
+        salesorderid,
+        salesorderdetailid,
+        carriertrackingnumber,
+        orderqty,
         productid,
+        specialofferid,
         unitprice,
-        quantity,
-        discount,
-        unitprice * quantity * (1 - discount) as total_sales,
-        orderdate
+        unitpricediscount,
+        unitprice * orderqty * (1 - unitpricediscount) as total_sales,
+        rowguid,
+        modifieddate
     from
         {{ source('adventure_works', 'sales_salesorderdetail') }}
 )
 select
-    orderid,
+    salesorderid,
+    salesorderdetailid,
+    carriertrackingnumber,
+    orderqty,
     productid,
+    specialofferid,
     unitprice,
-    quantity,
-    discount,
+    unitpricediscount,
     total_sales,
-    orderdate
+    rowguid,
+    modifieddate
 from base
