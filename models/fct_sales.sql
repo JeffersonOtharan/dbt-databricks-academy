@@ -37,7 +37,17 @@ salesreason_bridge as (
     select
         salesorderid,
         salesreasonid
-    from {{ source('adventure_works','sales_salesorderheadersalesreason') }}
+    from (
+        select
+            salesorderid,
+            salesreasonid,
+            row_number() over (
+                partition by salesorderid
+                order by salesreasonid
+            ) as rn
+        from {{ source('adventure_works','sales_salesorderheadersalesreason') }}
+    ) x
+    where rn = 1
 ),
 
 salesreason as (
