@@ -1,7 +1,6 @@
 version: 2
 
 models:
-
   - name: dim_territorio
     description: "Dimensão de territórios de vendas, utilizada para análises geográficas."
     columns:
@@ -15,12 +14,10 @@ models:
         description: "Nome do território."
 
       - name: countryregioncode
-        description: "Código do país ou região."
+        description: "Código do país/região associado ao território."
 
       - name: territory_group
         description: "Grupo do território."
 
       - name: modifieddate
         description: "Data da última atualização do registro."
-
-  
