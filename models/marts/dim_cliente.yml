@@ -13,9 +13,6 @@ models:
       - name: personid
         description: "pessoa associada ao cliente (BusinessEntityID)."
 
-      - name: storeid
-        description: "identificador de loja."
-
       - name: territoryid
         description: "território de vendas associado ao cliente."
         tests:
