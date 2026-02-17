@@ -1,44 +1,23 @@
 version: 2
 sources:
   - name: adventure_works
-    description: "Fonte de dados do banco fea_academy"
+    description: "Base adventure_works"
     tables:
       - name: production_product
-        description: "Tabela de produtos com informações detalhadas sobre os produtos"
-        
-      - name: production_productcategory
-        description: "Categorias de produtos"
-        
-      - name: production_productsubcategory
-        description: "Subcategorias de produtos"
-        
-      - name: sales_customer
-        description: "Informações sobre os clientes"
-        
-      - name: sales_salesorderheader
-        description: "Cabeçalho dos pedidos"
-        
-      - name: sales_salesorderdetail
-        description: "Detalhes dos pedidos"
-        
-      - name: sales_salesterritory
-        description: "Territórios de vendas"
-        
-      - name: person_person
-        description: "Informações pessoais dos clientes"
-        
-      - name: person_address
-        description: "Endereços das pessoas"
-        
-      - name: person_emailaddress
-        description: "Endereços de email das pessoas"
-      - name: production_product
       - name: production_productsubcategory
       - name: production_productcategory
+
       - name: sales_customer
-      - name: sales_salesterritory
       - name: sales_salesorderdetail
       - name: sales_salesorderheader
       - name: sales_creditcard
       - name: sales_salesorderheadersalesreason
       - name: sales_salesreason
+      - name: sales_salesperson
+      - name: sales_salesterritory
+
+      - name: person_person
+      - name: person_emailaddress
+      - name: person_address
+      - name: person_stateprovince
+      - name: person_countryregion
