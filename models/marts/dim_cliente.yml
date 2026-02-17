@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: dim_cliente
+    description: "Dimensão de clientes"
+    columns:
+      - name: customerid
+        description: "identificador único do cliente."
+        tests:
+          - not_null
+          - unique
+
+      - name: personid
+        description: "pessoa associada ao cliente (BusinessEntityID)."
+
+      - name: storeid
+        description: "identificador de loja."
+
+      - name: territoryid
+        description: "território de vendas associado ao cliente."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_territorio')
+                field: territoryid
+
+      - name: firstname
+        description: "Primeiro nome do cliente."
+      - name: middlename
+        description: "Nome do meio do cliente, se tiver."
+      - name: lastname
+        description: "Sobrenome do cliente."
+      - name: full_name
+        description: "Nome completo do cliente."
+      - name: emailaddress
+        description: "Endereço de e-mail principal do cliente."
+
+      - name: rowguid
+        description: "Identificador global único do registro."
+      - name: modifieddate
+        description: "Data da última atualização do registro."
