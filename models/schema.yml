@@ -1,47 +1,6 @@
 version: 2
 
 models:
-  - name: dim_produto
-    description: "Dimensão de produtos, contendo informações descritivas e comerciais dos produtos."
-    columns:
-      - name: productid
-        description: "Identificador único do produto."
-        tests:
-          - not_null
-          - unique
-
-      - name: name
-        description: "Nome do produto."
-
-      - name: productnumber
-        description: "Código do produto."
-
-      - name: color
-        description: "Cor do produto."
-
-      - name: listprice
-        description: "Preço de tabela do produto."
-
-      - name: safetystocklevel
-        description: "Nível mínimo de estoque de segurança."
-
-      - name: reorderpoint
-        description: "Ponto de reposição do estoque."
-
-      - name: standardcost
-        description: "Custo padrão do produto."
-
-      - name: size
-        description: "Tamanho do produto."
-
-      - name: sizeunitmeasurecode
-        description: "Unidade de medida associada ao tamanho."
-
-      - name: weight
-        description: "Peso do produto."
-
-      - name: weightunitmeasurecode
-        description: "Unidade de medida associada ao peso."
 
   - name: dim_tempo
     description: "Dimensão de tempo, utilizada para análises temporais de vendas."
