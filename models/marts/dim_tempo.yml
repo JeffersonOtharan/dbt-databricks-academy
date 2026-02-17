@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_tempo
+    description: "Dimensão de tempo construída a partir de SalesOrderHeader.orderdate para análises temporais."
+    columns:
+      - name: orderdate
+        description: "Data do pedido."
+        tests:
+          - not_null
+          - unique
+
+      - name: ano
+        description: "Ano da data do pedido."
+
+      - name: trimestre
+        description: "Trimestre do ano (1 a 4)."
+
+      - name: mes
+        description: "Mês do ano (1 a 12)."
+
+      - name: dia
+        description: "Dia do mês."
+
+      - name: mes_nome
+        description: "Nome do mês."
+
+      - name: dia_da_semana
+        description: "Nome do dia da semana."
