@@ -105,7 +105,7 @@ select
     h.territoryid,
 
     cc.cardtype,
-    sr.salesreason_name,
+    coalesce(sr.salesreason_name, 'Sem motivo') as salesreason_name,
 
     d.productid,
     d.specialofferid,

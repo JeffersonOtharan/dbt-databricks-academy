@@ -2,7 +2,6 @@ with customer as (
     select
         customerid,
         personid,
-        storeid,
         territoryid,
         rowguid,
         modifieddate
@@ -40,7 +39,6 @@ email as (
 select
     c.customerid,
     c.personid,
-    c.storeid,
     c.territoryid,
 
     p.firstname,

@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_territorio
+    description: "Dimensão de territórios de vendas, utilizada para análises geográficas."
+    columns:
+      - name: territoryid
+        description: "Identificador único do território."
+        tests:
+          - not_null
+          - unique
+
+      - name: territory_name
+        description: "Nome do território."
+
+      - name: countryregioncode
+        description: "Código do país/região associado ao território."
+
+      - name: territory_group
+        description: "Grupo do território."
+
+      - name: modifieddate
+        description: "Data da última atualização do registro."
