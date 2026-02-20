@@ -10,7 +10,7 @@ detail as (
         unitpricediscount,
         unitprice * orderqty as gross_sales,
         unitprice * orderqty * (1 - unitpricediscount) as net_sales
-    from {{ source('adventure_works','sales_salesorderdetail') }}
+    from {{ ref('stg_sales__salesorderdetail') }}
 ),
 
 header as (
@@ -23,14 +23,14 @@ header as (
         cast(creditcardid as bigint) as creditcardid,
         cast(salespersonid as bigint) as salespersonid,
         shiptoaddressid
-    from {{ source('adventure_works','sales_salesorderheader') }}
+    from {{ ref('stg_sales__salesorderheader') }}
 ),
 
 creditcard as (
     select
         creditcardid,
         cardtype
-    from {{ source('adventure_works','sales_creditcard') }}
+    from {{ ref('stg_sales__creditcard') }}
 ),
 
 salesreason_bridge as (
@@ -45,7 +45,7 @@ salesreason_bridge as (
                 partition by salesorderid
                 order by salesreasonid
             ) as rn
-        from {{ source('adventure_works','sales_salesorderheadersalesreason') }}
+        from {{ ref('stg_sales__salesorderheadersalesreason') }}
     ) x
     where rn = 1
 ),
@@ -53,8 +53,8 @@ salesreason_bridge as (
 salesreason as (
     select
         salesreasonid,
-        name as salesreason_name
-    from {{ source('adventure_works','sales_salesreason') }}
+        salesreason_name
+    from {{ ref('stg_sales__salesreason') }}
 ),
 
 address as (
@@ -62,29 +62,29 @@ address as (
         addressid,
         city,
         stateprovinceid
-    from {{ source('adventure_works','person_address') }}
+    from {{ ref('stg_person__address') }}
 ),
 
 stateprovince as (
     select
         stateprovinceid,
-        name as state_name,
+        state_name,
         countryregioncode
-    from {{ source('adventure_works','person_stateprovince') }}
+    from {{ ref('stg_person__stateprovince') }}
 ),
 
 countryregion as (
     select
         countryregioncode,
-        name as country_name
-    from {{ source('adventure_works','person_countryregion') }}
+        country_name
+    from {{ ref('stg_person__countryregion') }}
 ),
 
 salesperson as (
     select
         businessentityid,
         territoryid
-    from {{ source('adventure_works','sales_salesperson') }}
+    from {{ ref('stg_sales__salesperson') }}
 ),
 
 person as (
@@ -93,7 +93,7 @@ person as (
         firstname,
         middlename,
         lastname
-    from {{ source('adventure_works','person_person') }}
+    from {{ ref('stg_person__person') }}
 )
 
 select

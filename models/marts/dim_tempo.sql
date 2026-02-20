@@ -1,15 +1,14 @@
 with base as (
     select
         distinct
-        orderdate,
-        year(orderdate) as ano,
-        quarter(orderdate) as trimestre,
-        month(orderdate) as mes,
-        dayofmonth(orderdate) as dia,
-        date_format(orderdate, 'MMMM') as mes_nome,
-        date_format(orderdate, 'EEEE') as dia_da_semana
-    from
-        {{ source('adventure_works', 'sales_salesorderheader') }}
+        to_date(orderdate) as orderdate,
+        year(to_date(orderdate)) as ano,
+        quarter(to_date(orderdate)) as trimestre,
+        month(to_date(orderdate)) as mes,
+        dayofmonth(to_date(orderdate)) as dia,
+        date_format(to_date(orderdate), 'MMMM') as mes_nome,
+        date_format(to_date(orderdate), 'EEEE') as dia_da_semana
+    from {{ ref('stg_sales__salesorderheader') }}
 )
 
 select

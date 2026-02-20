@@ -12,8 +12,7 @@ with base as (
         sizeunitmeasurecode,
         weight,
         weightunitmeasurecode
-    from
-        {{ source('adventure_works','production_product') }}
+    from {{ ref('stg_production__product') }}
 )
 select
     productid,

@@ -5,7 +5,7 @@ with customer as (
         territoryid,
         rowguid,
         modifieddate
-    from {{ source('adventure_works','sales_customer') }}
+    from {{ ref('stg_sales__customer') }}
 ),
 
 person as (
@@ -14,7 +14,7 @@ person as (
         firstname,
         middlename,
         lastname
-    from {{ source('adventure_works','person_person') }}
+    from {{ ref('stg_person__person') }}
 ),
 
 email_ranked as (
@@ -25,7 +25,7 @@ email_ranked as (
             partition by businessentityid
             order by emailaddressid
         ) as rn
-    from {{ source('adventure_works','person_emailaddress') }}
+    from {{ ref('stg_person__emailaddress') }}
 ),
 
 email as (

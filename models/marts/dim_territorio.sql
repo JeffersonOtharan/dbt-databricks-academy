@@ -1,12 +1,11 @@
 with base as (
     select
         territoryid,
-        name as territory_name,
+        territory_name,
         countryregioncode,
-        group as territory_group,
+        territory_group,
         modifieddate
-    from
-        {{ source('adventure_works', 'sales_salesterritory') }}
+    from {{ ref('stg_sales__salesterritory') }}
 )
 select
     territoryid,
