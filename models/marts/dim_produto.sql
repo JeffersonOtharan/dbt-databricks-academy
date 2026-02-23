@@ -2,29 +2,17 @@ with base as (
     select
         productid,
         name,
-        productnumber,
-        color,
         listprice,
         safetystocklevel,
         reorderpoint,
-        standardcost,
-        size,
-        sizeunitmeasurecode,
-        weight,
-        weightunitmeasurecode
+        standardcost
     from {{ ref('stg_production__product') }}
 )
 select
     productid,
     name,
-    productnumber,
-    color,
     listprice,
     safetystocklevel,
     reorderpoint,
-    standardcost,
-    size,
-    sizeunitmeasurecode,
-    weight,
-    weightunitmeasurecode
+    standardcost
 from base

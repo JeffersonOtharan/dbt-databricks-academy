@@ -78,23 +78,8 @@ countryregion as (
         countryregioncode,
         country_name
     from {{ ref('stg_person__countryregion') }}
-),
-
-salesperson as (
-    select
-        businessentityid,
-        territoryid
-    from {{ ref('stg_sales__salesperson') }}
-),
-
-person as (
-    select
-        businessentityid,
-        firstname,
-        middlename,
-        lastname
-    from {{ ref('stg_person__person') }}
 )
+
 
 select
     d.salesorderid,
@@ -117,10 +102,7 @@ select
 
     a.city,
     sp.state_name,
-    cr.country_name,
-
-    h.salespersonid,
-    concat_ws(' ', p2.firstname, p2.middlename, p2.lastname) as salesperson_name
+    cr.country_name
 
 from detail d
 left join header h
@@ -140,8 +122,3 @@ left join stateprovince sp
     on a.stateprovinceid = sp.stateprovinceid
 left join countryregion cr
     on sp.countryregioncode = cr.countryregioncode
-
-left join salesperson s
-    on h.salespersonid = s.businessentityid
-left join person p2
-    on s.businessentityid = p2.businessentityid

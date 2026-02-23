@@ -3,12 +3,12 @@ with base as (
         territoryid,
         territory_name,
         countryregioncode,
-        territory_group,
+        territory_group
     from {{ ref('stg_sales__salesterritory') }}
 )
 select
     territoryid,
     territory_name,
     countryregioncode,
-    territory_group,
+    territory_group
 from base

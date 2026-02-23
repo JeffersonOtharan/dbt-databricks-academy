@@ -13,12 +13,6 @@ models:
       - name: name
         description: "Nome do produto."
 
-      - name: productnumber
-        description: "Código do produto."
-
-      - name: color
-        description: "Cor do produto."
-
       - name: listprice
         description: "Preço de tabela do produto."
 
@@ -30,15 +24,3 @@ models:
 
       - name: standardcost
         description: "Custo padrão do produto."
-
-      - name: size
-        description: "Tamanho do produto."
-
-      - name: sizeunitmeasurecode
-        description: "Unidade de medida associada ao tamanho."
-
-      - name: weight
-        description: "Peso do produto."
-
-      - name: weightunitmeasurecode
-        description: "Unidade de medida associada ao peso."
