@@ -18,6 +18,3 @@ models:
 
       - name: territory_group
         description: "Grupo do território."
-
-      - name: modifieddate
-        description: "Data da última atualização do registro."

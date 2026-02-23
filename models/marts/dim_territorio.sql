@@ -4,7 +4,6 @@ with base as (
         territory_name,
         countryregioncode,
         territory_group,
-        modifieddate
     from {{ ref('stg_sales__salesterritory') }}
 )
 select
@@ -12,5 +11,4 @@ select
     territory_name,
     countryregioncode,
     territory_group,
-    modifieddate
 from base
