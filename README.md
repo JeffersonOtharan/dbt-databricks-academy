@@ -1,5 +1,8 @@
 # Projeto Adventure Works - Data Warehouse e Dashboard de Vendas
 
+<img width="1672" height="941" alt="ChatGPT Image 23 de abr  de 2026, 20_03_07" src="https://github.com/user-attachments/assets/55fec79e-0200-42b5-8930-537eb7ca78c9" />
+
+
 ## Objetivo do Projeto
 
 O objetivo deste projeto é estruturar os dados da base **Adventure Works** utilizando o **DBT Cloud** e o **Databricks**, com a finalidade de criar um **modelo de dados eficiente** para possibilitar a análise de vendas, clientes, produtos e promoções. As análises são realizadas por meio de um **dashboard interativo no Power BI**, com o foco em fornecer **insights financeiros** essenciais para a empresa.
